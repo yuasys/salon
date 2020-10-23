@@ -1,0 +1,21 @@
+{
+  "name": "salon",
+  "version": "1.0.0",
+  "description": "このリポジトリsalonはGlitchを使ってサイト制作を行う実験です。 目的はローカル開発からデプロイまでの一貫作業が可能な開発環境を構築することです。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuasys/salon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuasys/salon/issues"
+  },
+  "homepage": "https://github.com/yuasys/salon#readme"
+}
