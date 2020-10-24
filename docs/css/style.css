@@ -1,0 +1,1088 @@
+@charset "utf-8";
+/* ==============================================
+
+    RESET
+
+============================================== */
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, caption, canvas, center, cite, code,
+dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, form, footer, header, hgroup, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, main, mark, menu, nav,object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, tt, table, tbody, textarea, tfoot, thead, time, tr, th, td, u, ul, var, video  { 
+	font-family: inherit;
+	font-size: 100%;
+	font-weight: inherit;
+	font-style: inherit;
+	vertical-align: baseline;
+	white-space: normal;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	background: transparent;
+}
+body{
+  line-height:1;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q { quotes: none; }
+
+:focus { outline: 0; }
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img {
+	vertical-align : middle;
+}
+input ,select{
+vertical-align:middle;
+}
+button,
+input,
+textarea {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-family: inherit;
+	padding: 6px;
+	background: #fff;
+}
+input[type="checkbox"] {
+	padding-left: 1em;
+	text-indent: -1em;
+}
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.txt-button a {
+	padding: 2px 32px;
+	font-size: 16px; font-size: 1.6rem;
+	line-height: 2.5;
+	font-weight: 600;
+	color: #fff !important;
+	background: #bd2570;
+	border-radius: 3px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	font-weight: 400;
+	text-decoration:none;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+.txt-button a:hover {
+	background: #ff99cc;
+}
+.txt-button a {
+position: relative;
+	padding: 1px 44px 1px 32px;
+	margin: 2em 0;
+}
+.txt-button a::after{
+position: absolute;
+top: 0;
+bottom: 0;
+right: 12px;
+margin: auto;
+content: "";
+vertical-align: middle;
+width: 8px;
+height: 8px;
+border-top: 2px solid #fff;
+border-right: 2px solid #fff;
+-webkit-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: 1px solid #ccc;
+	padding: 6px 36px 6px 6px;
+	border-radius: 3px;
+	background: url('image/common/arrow2.png') right 50% no-repeat #fff;
+	background-size: 20px, 32px;
+}
+
+#contents {
+	padding: 0 constant(safe-area-inset-right) 0 constant(safe-area-inset-left);
+	padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left);
+	}
+
+#description-pc {
+		font-size: 16px; font-size: 1.6rem;	
+		line-height: 1.1;
+		margin: 20px 0 0 10px;
+		}
+/* ==============================================
+		共通
+============================================== */
+html { font-size: 50%; } 
+@media screen and (min-width: 560px) { /* 560px以上の場合 */
+	html { font-size: 55%; } 
+}
+@media screen and (min-width: 1025px) { /* 1025px以上の場合 */
+	html { font-size: 62.5%; } 
+}
+
+img{
+	max-width : 100%;
+	height: auto;
+}
+
+body {
+	margin: 0px auto;
+	padding: 0px;
+	font-family: -apple-system, BlinkMacSystemFont, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+	color: #666666;
+	font-size: 18px; font-size: 1.8rem;	/* =18px */
+	font-weight: 400;
+	line-height: 1.6;
+	text-align: center;
+	border: none;
+	background: #fff;
+	}
+@media screen and (min-width: 1025px) { /* 1025px以上の場合 */
+	body { font-weight: 200; } 
+}
+
+strong {
+	font-weight: 600;
+	color: #bd2570;
+	font-size: 110%;
+}
+em {
+	font-weight: 600;
+	color: #000;
+}
+/* anchor	*****************************************/
+
+a {
+	color: #bd2570;
+	text-decoration: underline;
+	transition: all ease .5s; }
+a:visited { text-decoration: underline; }
+a:hover,
+a:active,
+a:focus  { color:#ff99cc; text-decoration:none; }
+a img	{ border: 0 none;}
+
+a[href$=".pdf"]{
+padding-left: 20px;
+background: url(image/common/pdf-icon.svg)no-repeat left;
+}
+
+a:hover img{
+	opacity:0.8;
+	filter: alpha(opacity=80);
+}
+
+.note {
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
+/* YouTube	*****************************************/
+
+.video {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	}
+	.video iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+
+	/* dl-line	*****************************************/
+
+	dl.line-float dt {
+		padding: 5px 5px 0 5px;
+		}
+		dl.line-float dd {
+		padding: 5px 5px 5px 1em;
+		border-bottom: 1px dashed #999;
+		}
+		dl.line-float dd:last-child {
+		border-bottom: none;
+		}
+	@media screen and (min-width: 560px) { /* 560px以上の場合 */
+		dl.line-float dt {
+		clear: left;
+		float: left;
+		padding: 5px;
+		}
+		dl.line-float dd {
+		padding: 5px 5px 5px 7em;
+		border-bottom: 1px dashed #999;
+		}
+	}
+
+/* dl-table	*****************************************/
+
+dl.table {
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid #999;
+	}
+	dl.table dt {
+	float: left;
+	padding: 15px 5px 0 5px;
+	border-top: 1px solid #999;
+	width: 6em;
+	}
+	dl.table dd {
+	margin-left: 6em;
+	padding: 15px 5px;
+	border-top: 1px solid #999;
+	background: #fff;
+	}
+	dl.table dd.table-map {
+	margin-left: 0;
+	border-top: none;
+	padding-top: 0;
+	}
+	dl.table ul.list {
+	margin-bottom: 0;
+	}
+	dl.table dd:after{
+	display: block;
+	content: "";
+	clear: both;
+	}
+@media screen and (min-width: 560px) {/* 560px以上の場合 */
+	dl.table {
+	background: #ead6c6;
+	}
+	dl.table dt {
+	width: 7.5em;
+	}
+	dl.table dd {
+	margin-left: 7.5em;
+	padding: 15px 10px;
+	}
+	dl.table dd.table-map {
+	margin-left: 7.5em;
+	padding: 0 10px 15px;
+	}
+	dl.table ul.list {
+	float: left;
+	width: calc(50% - 1.5em);
+	}
+}
+
+/* イメージ	*****************************************/
+
+@media screen and (min-width: 560px) {/* 560px以上の場合 */
+	.entry-content .alignleft,
+	img.alignleft {
+		float: left;
+		margin-right: 18px;
+	}
+	.entry-content .left {
+		float: left;
+	}
+	.entry-content .alignright,
+	img.alignright {
+		float: right;
+		margin-left: 18px;
+	}
+	.entry-content .right {
+		float: right;
+	}
+}
+.entry-content .aligncenter,
+img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* 物理的指定	*****************************************/
+
+@media screen and (min-width: 560px) {/* 560px以上の場合 */
+	.left {
+		float: left;
+	}
+	.right {
+		float: right;
+	}
+}
+.center {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* テキスト寄せ	*****************************************/
+
+.txt-right {
+	text-align: right;
+}
+.txt-center {
+	text-align: center;
+}
+
+/* 物理的指定マージン	*****************************************/
+
+.mb0 {
+	margin-bottom: 0 !important;
+}
+.mb1 {
+	margin-bottom: 1em !important;
+}
+
+/*　横幅分割	*****************************************/
+
+@media screen and (min-width: 560px) {/* 560px以上の場合 */
+.w1-2 {	
+	width: 50%;
+	padding: 0 1.5%;
+}
+.w1-3 { 
+	width: 33.33%;
+	padding: 0 1.5%;
+}
+.w2-3 { 
+	width: 66.66%;
+	padding: 0 1.5%;
+}
+.w1-4 {
+	width: 25%;
+	padding: 0 1.5%;
+}
+.w3-4 {
+	width: 75%;
+	padding: 0 1.5%;
+}
+.width50 {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.width80 {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.w1-2.left,
+.w1-3.left,
+.w2-3 left,
+.w1-4 left {
+	padding-left: 0;
+}
+.w1-2.right,
+.w1-3.right,
+.w2-3.right,
+.w3-4 right {
+	padding-right: 0;
+}
+}
+
+/*　flex	*****************************************/
+
+.flex {
+	display: flex;
+	flex-flow: row wrap;
+}
+/* 水平方向 */
+	/* 中央揃え */
+	.flex-center {
+	justify-content: center;
+	}
+	/* 最初と最後の子要素を両端に配置し、残りの要素は均等に間隔をあけて配置 */
+	.flex-sb {
+	justify-content: space-between;
+	}
+	/* 両端の子要素も含め、均等に間隔をあけて配置 */
+	.flex-sa {
+	justify-content: space-around;
+	}
+
+.flex2,
+.flex3,
+.flex4 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 40px;
+	}
+	.flex2 .flex-box,
+	.flex3 .flex-box,
+	.flex4 .flex-box {
+	flex-basis: 100%;
+	margin-top: 0;
+	}
+	.flex2 .flex-box:nth-of-type(n + 2),
+	.flex3 .flex-box:nth-of-type(n + 2),
+	.flex4 .flex-box:nth-of-type(n + 2) {
+	margin-top: 20px;
+	}
+@media screen and (min-width: 560px) {/* 560px以上の場合 */
+	.flex2 .flex-box,
+	.flex3 .flex-box,
+	.flex4 .flex-box {
+		flex-basis: calc( 50% - 10px );
+		max-width: calc( 50% - 10px );
+		}
+		.flex2 .flex-box p:last-of-type {
+		margin-bottom: 0;
+		}
+		.flex2 .flex-box:nth-of-type(n + 2),
+		.flex3 .flex-box:nth-of-type(n + 2),
+		.flex4 .flex-box:nth-of-type(n + 2) {
+		margin-top: 0;
+		}
+		.flex2 .flex-box:nth-of-type(n + 3),
+		.flex3 .flex-box:nth-of-type(n + 3),
+		.flex4 .flex-box:nth-of-type(n + 3) {
+		margin-top: 20px;
+		}
+	.flex2.flex3-7 .flex-box:nth-of-type(odd) {
+		flex-basis: 300px;
+		max-width: 300px;
+		}
+		.flex2.flex3-7 .flex-box:nth-of-type(even) {
+		flex-basis: calc( 100% - 320px );
+		max-width: calc( 100% - 320px );
+		}
+	.flex2.flex7-3 .flex-box:nth-of-type(odd) {
+		flex-basis: calc( 100% - 320px );
+		max-width: calc( 100% - 320px );
+		}
+		.flex2.flex7-3 .flex-box:nth-of-type(even) {
+		flex-basis: 300px;
+		max-width: 300px;
+		}
+}
+@media screen and (min-width: 1025px) {/* 1025px以上の場合 */
+	.flex3:after {
+		content: "";
+		width: calc( 33.333% - 10px );
+		}
+		.flex3 .flex-box {
+		flex-basis: calc( 33.333% - 10px );
+		max-width: calc( 33.333% - 10px );
+		}
+		.flex3 .flex-box:nth-of-type(n + 3) {
+		margin-top: 0;
+		}
+		.flex3 .flex-box:nth-of-type(n + 4) {
+		margin-top: 20px;
+		}
+
+	.flex4 {
+		position: relative;
+		}
+		.flex4:before {
+		content: "";
+		display: block;
+		width: calc( 25% - 10px );
+		order: 1;
+		}
+		.flex4:after {
+		content: "";
+		width: calc( 25% - 10px );
+		display: block;
+		}
+		.flex4 .flex-box {
+		flex-basis: calc( 25% - 10px );
+		max-width: calc( 25% - 10px );
+		}
+		.flex4 .flex-box:nth-of-type(n + 3) {
+		margin-top: 0;
+		}
+		.flex4 .flex-box:nth-of-type(n + 5) {
+		margin-top: 20px;
+		}
+}
+
+/* display: none	*****************************************/
+
+.d_n {
+	display: none;
+	}
+@media screen and (min-width: 560px) {/* 560px以上の場合 */
+.d_n {
+	display: inline;
+	}
+.d_n-pc {
+	display: none;
+	}
+}
+
+/* ==============================================
+
+		1024px以上（タブレット／PC用）
+
+============================================== */
+
+#header {
+	/* iPhone X 以外にpaddingをつける場合ここに書く */
+	
+	/* iPhone X iOS 11.1以下: Safe Aria内に配置 */
+	padding: constant(safe-area-inset-top) constant(safe-area-inset-right) 0 constant(safe-area-inset-left);
+	/* iPhone X iOS 11.2以上: Safe Aria内に配置 */
+	padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left);
+	}
+	
+	#contents {
+	padding: 0 constant(safe-area-inset-right) 0 constant(safe-area-inset-left);
+	padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left);
+	}
+	#footer {
+	padding: 0 constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
+	padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+	}
+	
+	/* ----------------------------------------------
+	
+		header
+	
+	---------------------------------------------- */
+	
+	#header {
+		box-shadow: 0 2px 5px rgba(0,0,0,.26);
+		background: #fff;
+		height: 125px;
+		}
+		#header::after {
+		content: ""; 
+		display: block; 
+		clear: both;
+		}
+	#header-inner {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 1035px;
+		margin: 0 auto;
+		height: 125px;
+	}
+	.siteLogo {
+		display: inline-flex;
+		margin: 35px 0 0 5px;
+		width: 200px;
+		z-index: 100;
+		}
+		.siteLogo a {
+		display: block;
+		}
+	#header-cont {
+		width: calc(100% - 230px);
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 0 0 auto;
+	}
+	
+	#description-sp {
+		display: none;
+	}
+	#description-pc {
+		font-size: 16px; font-size: 1.6rem;	
+		line-height: 1.1;
+		margin: 20px 0 0 10px;
+		}
+	#header-contact {
+		display: flex;
+		width: 385px;
+		margin: 10px 10px 0 auto;
+		}
+		#header-contact li:nth-of-type(1) {
+		width: 205px;
+			}
+			#header-contact li:nth-of-type(1) span {
+			font-size: 14px; font-size: 1.4rem;
+			margin: 0 0 0 auto;
+			display: block;
+			line-height: 1.1;
+			}
+		#header-contact li:nth-of-type(2) {
+		margin-left:30px;
+			}
+		#header-contact li:nth-of-type(2) a {
+		background: #74bfa3;
+		border: 1px solid #74bfa3;
+		width: 150px;
+		height: 45px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		text-decoration: none;
+			}
+			#header-contact li:nth-of-type(2) a:hover {
+			background: #fff;
+			color: #74bfa3;
+			}
+	
+	#header-navi .siteLogo {
+		display: none;
+	}
+	
+	@media screen and (max-width: 1025px) {/* 1025px以上の場合 */
+		#header,
+		#header-inner {
+		height: auto;
+		}
+		#description-sp {
+		display: block;
+		font-size: 12px; font-size: 1.2rem;
+		line-height: 1.5;
+		background: #ead6c6;
+		height: 20px;
+		color: #fff;
+		}
+		#description-sp h1 {
+		margin: 0 auto;
+		padding: 0 5px;
+		}
+		.siteLogo,
+		#header-cont {
+		display: none;
+		}
+		#header-navi .siteLogo {
+		display: block;
+		float: left;
+		margin: 5px 0 0 5px;
+		width: 180px;
+	}
+	
+	}
+
+/* ナビゲーション	*****************************************/
+
+.cd-morph-dropdown {
+	position: relative;
+    width: 100%;
+	height: 60px;
+}
+.cd-morph-dropdown::before {
+  /* never visible - used in JS to check mq */
+  content: 'mobile';
+  display: none;
+}
+.cd-morph-dropdown a {
+	text-decoration: none;
+}
+.cd-morph-dropdown .nav-trigger {
+  /* menu icon - visible on small screens only */
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  width: 60px;
+  /* replace text with icon */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  color: transparent;
+}
+.cd-morph-dropdown .nav-trigger span, .cd-morph-dropdown .nav-trigger span::after, .cd-morph-dropdown .nav-trigger span::before {
+  /* these are the 3 lines of the menu icon */
+  position: absolute;
+  background-color: #1A1A1A;
+  height: 3px;
+  width: 26px;
+}
+.cd-morph-dropdown .nav-trigger span {
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+}
+.cd-morph-dropdown .nav-trigger span::after, .cd-morph-dropdown .nav-trigger span::before {
+  content: '';
+  left: 0;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+.cd-morph-dropdown .nav-trigger span::before {
+  -webkit-transform: translateY(-9px);
+      -ms-transform: translateY(-9px);
+          transform: translateY(-9px);
+}
+.cd-morph-dropdown .nav-trigger span::after {
+  -webkit-transform: translateY(9px);
+      -ms-transform: translateY(9px);
+          transform: translateY(9px);
+}
+.cd-morph-dropdown.nav-open .nav-trigger span {
+  background-color: transparent;
+}
+.cd-morph-dropdown.nav-open .nav-trigger span::before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.cd-morph-dropdown.nav-open .nav-trigger span::after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.cd-morph-dropdown .main-nav {
+  display: none;
+}
+.cd-morph-dropdown .morph-dropdown-wrapper {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 1.2em 5%;
+  box-shadow: rgba(0,0,0,.26);
+  background-color: #FFFFFF;
+}
+.cd-morph-dropdown.nav-open .morph-dropdown-wrapper {
+  display: block;
+  z-index: 999;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+.cd-morph-dropdown .dropdown-list > ul > li {
+  margin-bottom: 3.3em;
+}
+.cd-morph-dropdown .label {
+  display: block;
+  font-size: 2.2rem;
+  color: #1A1A1A;
+  margin-bottom: .8em;
+}
+.cd-morph-dropdown .content li::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.cd-morph-dropdown .gallery .content li {
+  margin-bottom: 1.4em;
+}
+.cd-morph-dropdown .gallery .content a {
+  display: block;
+}
+.cd-morph-dropdown .gallery .content a span, .cd-morph-dropdown .gallery .content a em {
+  display: block;
+  line-height: 1.2;
+}
+.cd-morph-dropdown .gallery .content a em {
+  font-size: 1.8rem;
+  padding: .4em 0 .2em;
+  color: #1A1A1A;
+}
+.cd-morph-dropdown .gallery .content a span {
+  font-size: 1.4rem;
+  color: #a6a6a6;
+}
+.cd-morph-dropdown .gallery li:nth-of-type(1) a::before {
+  background: url('image/index/menu-facial.jpg') no-repeat center center;
+  background-size: cover;
+}
+.cd-morph-dropdown .gallery li:nth-of-type(2) a::before {
+  background: url('image/index/menu-body.jpg') no-repeat center center;
+  background-size: cover;
+}
+.cd-morph-dropdown .gallery li:nth-of-type(3) a::before {
+  background: url('image/index/menu-epi.jpg') no-repeat center center;
+  background-size: cover;
+}
+.cd-morph-dropdown .gallery li:nth-of-type(4) a::before {
+  background: url('image/index/menu-breast.jpg') no-repeat center center;
+  background-size: cover;
+}
+.cd-morph-dropdown .gallery li:nth-of-type(5) a::before {
+  background: url('image/index/menu-bridal.jpg') no-repeat center center;
+  background-size: cover;
+}
+.cd-morph-dropdown .gallery li:nth-of-type(6) a::before {
+  background: url('image/index/menu-aimake.jpg') no-repeat center center;
+  background-size: cover;
+}
+.cd-morph-dropdown .links .content > ul > li {
+  margin-top: 1em;
+}
+.cd-morph-dropdown .links-list a {
+  display: block;
+  font-size: 2.2rem;
+  line-height: 1.6;
+}
+.cd-morph-dropdown .links-list a:hover {
+  color: #1A1A1A;
+}
+  .cd-morph-dropdown .btn {
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin: 1.5em 0 0;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #FFFFFF;
+    line-height: 60px;
+    background: #880000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .cd-morph-dropdown .btn:hover {
+    background: #1A1A1A;
+    color: #FFFFFF;
+  }
+.cd-morph-dropdown a:hover {
+text-decoration:none;
+}
+.cd-morph-dropdown .content h2 {
+  color: #a6a6a6;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 20px 0 10px 14px;
+}
+
+
+@media screen and (min-width: 1025px)  { /* 1025px以上の場合 */
+#header-navi-inner {
+    max-width: 1035px;
+    margin: 0 auto;
+}
+  .cd-morph-dropdown {
+    position: absolute;
+    height: 70px;
+    left: 0;
+    top: 55px;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+  .cd-morph-dropdown::before {
+    content: 'desktop';
+  }
+  .cd-morph-dropdown .nav-trigger {
+    display: none;
+  }
+  .cd-morph-dropdown .main-nav {
+    display: inline-block;
+    /* float: right; */
+    margin-right: 5px;
+  }
+  .cd-morph-dropdown .main-nav > ul > li {
+    display: inline-block;
+    /* float: left; */
+  }
+  .cd-morph-dropdown .main-nav > ul > li > a {
+    display: block;
+    padding: 0 1.4em;
+    height: 70px;
+    line-height: 70px;
+    color: #420000;
+    font-size: 1.8rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: opacity .2s;
+    transition: opacity .2s;
+  }
+  .cd-morph-dropdown.is-dropdown-visible .main-nav > ul > li > a {
+    /* main navigation hover effect - on hover, reduce opacity of elements not hovered over */
+    opacity: .6;
+  }
+  .cd-morph-dropdown.is-dropdown-visible .main-nav > ul > li.active > a {
+    opacity: 1;
+  }
+  .cd-morph-dropdown .morph-dropdown-wrapper {
+    /* dropdown wrapper - used to create the slide up/slide down effect when dropdown is revealed/hidden */
+    display: block;
+    top: 58px;
+    /* overwrite mobile style */
+    width: auto;
+    padding: 0;
+    box-shadow: none;
+    background-color: transparent;
+    /* Force Hardware acceleration */
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    will-change: transform;
+    -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+            transform: translateY(20px);
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
+  z-index: 9999;
+  }
+  .cd-morph-dropdown.is-dropdown-visible .morph-dropdown-wrapper {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .cd-morph-dropdown .dropdown-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    will-change: transform, width, height;
+    -webkit-transition: visibility .3s;
+    transition: visibility .3s;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.26);
+  }
+  .no-csstransitions .cd-morph-dropdown .dropdown-list {
+    display: none;
+  }
+  .cd-morph-dropdown .dropdown-list::before {
+    /* dropdown top triangle */
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    height: 0;
+    width: 0;
+    border: 8px solid transparent;
+    border-bottom-color: #FFFFFF;
+    opacity: 0;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+  }
+  .cd-morph-dropdown .dropdown-list > ul {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  .cd-morph-dropdown.is-dropdown-visible .dropdown-list {
+    visibility: visible;
+    -webkit-transition: width .3s, height .3s, -webkit-transform .3s;
+    transition: width .3s, height .3s, -webkit-transform .3s;
+    transition: transform .3s, width .3s, height .3s;
+    transition: transform .3s, width .3s, height .3s, -webkit-transform .3s;
+  }
+  .cd-morph-dropdown.is-dropdown-visible .dropdown-list::before {
+    opacity: 1;
+  }
+  .cd-morph-dropdown .dropdown {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    -webkit-transition: opacity .3s, visibility .3s;
+    transition: opacity .3s, visibility .3s;
+  }
+  .cd-morph-dropdown .dropdown.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .cd-morph-dropdown .dropdown.move-left .content {
+    -webkit-transform: translateX(-100px);
+        -ms-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  .cd-morph-dropdown .dropdown.move-right .content {
+    -webkit-transform: translateX(100px);
+        -ms-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+  .cd-morph-dropdown .label {
+    /* hide the label on bigger devices */
+    display: none;
+  }
+  .cd-morph-dropdown .content {
+    padding: 2.2em 1.8em;
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
+    text-align: left;
+  }
+  .cd-morph-dropdown .content > ul::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  .cd-morph-dropdown .content > ul > li {
+    width: 48%;
+    float: left;
+    margin-right: 4%;
+    margin-top: 0;
+  }
+  .cd-morph-dropdown .content > ul > li:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  .cd-morph-dropdown .gallery .content {
+    /* you need to set a width for the .content elements because they have a position absolute */
+    width: 550px;
+    padding-bottom: .8em;
+  }
+  .cd-morph-dropdown .gallery .content li {
+    margin-bottom: 1.8em;
+  }
+  .cd-morph-dropdown .links .content > ul > li {
+    margin-top: 0;
+  }
+  .cd-morph-dropdown .links .content,
+  .cd-morph-dropdown .button .content {
+    width: 320px;
+  }
+  .cd-morph-dropdown .links-list a {
+/*    font-size: 1.6rem;
+    margin-left: 0;*/
+    display: none;
+  }
+  .cd-morph-dropdown .content h2 {
+    font-size: 1.8rem;
+    text-transform: none;
+    font-weight: normal;
+    color: #1A1A1A;
+    margin: 0 0 .6em;
+  }
+  .cd-morph-dropdown .bg-layer {
+    /* morph dropdown background */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 1px;
+    background: #FFFFFF;
+    opacity: 0;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+    -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+            transform-origin: top left;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  }

@@ -342,7 +342,7 @@ img.aligncenter {
 }
 
 
-/*　物理的指定	*****************************************/
+/* 物理的指定	*****************************************/
 
 @media screen and (min-width: 560px) {
 	.left {
@@ -700,7 +700,7 @@ padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-
 
 }
 
-/*　ナビゲーション	*****************************************/
+/* ナビゲーション	*****************************************/
 
 .cd-morph-dropdown {
 	position: relative;
